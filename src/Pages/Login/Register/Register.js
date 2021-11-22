@@ -52,6 +52,7 @@ const Register = () => {
 
     return (
         <>
+     
         <div style={loginBackground} className="login-bg">
            
            </div>
@@ -66,7 +67,7 @@ const Register = () => {
                <TextField 
                onBlur={handleOnBlur}
                sx={{ mb: 1}}
-        
+               id="outlined-basic"
                name="name"
                label="Name"
                type="text"
@@ -77,7 +78,7 @@ const Register = () => {
                <TextField 
                onBlur={handleOnBlur}
                sx={{ mb:1}}
-               
+               id="outlined-basic"
                name="email"
                label="Email"
                type="email"
@@ -88,7 +89,7 @@ const Register = () => {
                <TextField 
                sx={{ mb:1}}
                onBlur={handleOnBlur}
-               
+               id="outlined-basic"
                label="Password"
                type="password"
                name="password"
@@ -100,7 +101,7 @@ const Register = () => {
                <TextField 
                sx={{ mb:1}}
                onBlur={handleOnBlur}
-               
+               id="outlined-basic"
                label="ReType Your Password"
                type="password"
                name="password2"

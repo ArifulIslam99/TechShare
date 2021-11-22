@@ -44,6 +44,7 @@ const handleGoogleSignIn = ()=>{
     return (
   
         <>
+          
          <div style={loginBackground} className="login-bg">
             
             </div>
@@ -58,7 +59,7 @@ const handleGoogleSignIn = ()=>{
                 <TextField 
                 onBlur={handleOnBlur}
                 sx={{ mb:2}}
-                
+                id="outlined-basic"
                 name="email"
                 label="Email"
                 type="email"
@@ -69,7 +70,7 @@ const handleGoogleSignIn = ()=>{
                 <TextField 
                 sx={{ mb:2}}
                 onBlur={handleOnBlur}
-                
+                id="outlined-basic"
                 label="Password"
                 type="password"
                 name="password"

@@ -1,6 +1,13 @@
-body,html{
-    height: 100%;
+.login-bg{
+    
+    filter: blur(6px);
+   -webkit-filter: blur(7px);
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 800px;
+    
 }
+
 
 .login-field{
     background-color: rgb(0,0,0); /* Fallback color */
@@ -13,22 +20,16 @@ body,html{
     left: 50%;
     transform: translate(-50%, -50%);
     z-index: 2;
-    width: 60%;
+    width: 80%;
     padding: 20px;
     text-align: center;
-    margin-top: 50px;
+    margin-top: 100px;
     color: white;
+    justify-content: center;
+    align-items: center;
     
 }
 
-.login-bg{
-    
-    filter: blur(6px);
-   -webkit-filter: blur(7px);
-    background-position: center;
-    background-repeat: no-repeat;
-    height: 800px;
-}
 
 .alternate-msg{
     font-weight: 400;
