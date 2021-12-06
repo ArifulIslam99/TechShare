@@ -9,6 +9,10 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import DashBoardMain from './Pages/Dashboard/DashBoardMain/DashBoardMain';
 import PrivateRoute from './Pages/Login/PrivateRoute/PrivateRoute';
 import Navigation from './Pages/Shared/Navigation/Navigation';
+import AboutUS from '../src/Pages/AboutUs/AboutUS'
+
+import Blogs from './Pages/Blogs/Blogs';
+import BlogsDetails from './Pages/Blogs/BlogsDetails';
 
 
 
@@ -33,10 +37,20 @@ function App() {
                <Route  path = '/register'>
                   <Register></Register>
                </Route>
-               <PrivateRoute  path = '/dashboard'>
+               <Route  path = '/about'>
+                  <AboutUS></AboutUS>
+               </Route>
+               <Route path = '/blogs'>
+                  <Blogs></Blogs>
+               </Route>
+               <Route path = '/blog/:id'>
+                  <BlogsDetails></BlogsDetails>
+               </Route>
+               <Route  path = '/dashboard'>
                   <DashBoardMain></DashBoardMain>
-               </PrivateRoute>
+               </Route>
             </Switch>
+            
        </BrowserRouter>
       </AuthProvider>
          

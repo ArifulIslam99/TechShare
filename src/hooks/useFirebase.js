@@ -16,7 +16,7 @@ const useFirebase = () => {
 
     const [error, setError] = useState("");
 
-    const [isLoading, setIsLoading] = useState(true)
+    const [isLoading, setIsLoading] = useState(false)
 
     const auth = getAuth();
 
@@ -28,12 +28,14 @@ const useFirebase = () => {
         createUserWithEmailAndPassword(auth, email, password)
   .then((userCredential) => {
     
-    const user = userCredential.user;
-    const newUser = {email, displayName: name, photoURL: ''};
+    // const user = userCredential.user;
+    const newUser = {email, displayName: name};
     setUser(newUser)
+
+    saveUserDb(email, name, 'POST')
     
     updateProfile(auth.currentUser, {
-        displayName: name, photoURL: "https://clipart.world/wp-content/uploads/2020/08/letter-t-png.png"
+        displayName: name
       }).then(() => {
         
       }).catch((error) => {
@@ -48,31 +50,33 @@ const useFirebase = () => {
     } 
      
 
-    const googleSignIn = (history) => {
+    const googleSignIn = (history, location) => {
         setIsLoading(true)
         signInWithPopup(auth, provider)
-  .then((result) => {
+        .then((result) => {
     
-    const credential = GoogleAuthProvider.credentialFromResult(result);
-    const token = credential.accessToken;
-    
+    // const credential = GoogleAuthProvider.credentialFromResult(result);
+    // const token = credential.accessToken;
+    const destination = location.state?.from || '/'
+          history.replace(destination)
     const user = result.user; 
-    history.push('/')
+    saveUserDb(user.email, user.displayName, 'PUT')
     
-   
-  }).catch((error) => {
-         
-        setError(error.message)
-  }).finally(()=>setIsLoading(false));
-    }
+      }).catch((error) => {
+            
+            setError(error.message)
+      }).finally(()=>setIsLoading(false));
+        }
 
-    const userLogin = (email, password, history) =>{
+       const userLogin = (email, password, history, location) =>{
         setIsLoading(true)
         signInWithEmailAndPassword(auth, email, password)
         .then((userCredential) => {
           // Signed in 
-          const user = userCredential.user;
-          history.push('/')
+          // const user = userCredential.user;
+          const destination = location.state?.from || '/'
+          history.replace(destination)
+          
           // ...
         })
         .catch((error) => {
@@ -100,7 +104,16 @@ const useFirebase = () => {
           });
     },[])
 
-
+  const saveUserDb = (email, displayName, method) =>{
+          const user = {email, displayName, role:'user'}
+          fetch('https://safe-fjord-60058.herokuapp.com/users',{
+            method: method,
+            headers: {
+              'content-type' : 'application/json'
+            },
+            body: JSON.stringify(user)
+          })
+  }
 
     return{
         user,

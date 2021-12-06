@@ -6,12 +6,15 @@ import useAuth from '../../../hooks/useAuth';
 const PrivateRoute = ({ children, ...rest }) => {
 
     const {user, isLoading} = useAuth();
+
+    if(isLoading) { return <CircularProgress></CircularProgress>}
     
     return (
+       
         <Route
         {...rest}
         render={({ location }) =>
-          user.email ? (
+          user.uid ? (
             children
           ) : (
             <Redirect

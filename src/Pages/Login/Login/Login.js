@@ -1,6 +1,6 @@
 import { TextField , Button, CircularProgress} from '@mui/material';
 import React, { useState } from 'react';
-import { Link, useHistory } from 'react-router-dom';
+import { Link, useHistory, useLocation } from 'react-router-dom';
 import useAuth from '../../../hooks/useAuth';
 import loginbg from '../../../images/login-bg.jpg';
 import './Login.css'
@@ -10,6 +10,7 @@ const Login = () => {
     const {userLogin, isLoading, googleSignIn, error} = useAuth();
 
     const history = useHistory();
+    const location = useLocation();
 
 const [loginData, setLoginData] = useState({});
 
@@ -31,13 +32,13 @@ const handleOnBlur = event =>{
 
 
 const handleLoginSubmit = event =>{
-    userLogin(loginData.email, loginData.password, history)
+    userLogin(loginData.email, loginData.password, history, location)
     event.preventDefault();
 }
        
 
 const handleGoogleSignIn = ()=>{
-        googleSignIn(history)
+        googleSignIn(history,location)
         
 }
 
