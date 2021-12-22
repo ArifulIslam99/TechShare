@@ -5,19 +5,20 @@ import { useParams } from 'react-router';
 const BlogsDetails = () => {
     const id = useParams();
     const [blog, setBlog] = useState({}); 
-
+    const [loading, setLoading] = useState(true)
     useEffect(()=>{
+         setLoading(true)
         fetch(`https://safe-fjord-60058.herokuapp.com/blog/${id.id}`)
         .then(res => res.json())
-        .then(data => setBlog(data))
+        .then(data => {
+            setBlog(data)
+            setLoading(false)
+        })
     },[])
 
   
-      
+     if(loading){return <CircularProgress></CircularProgress>} 
     return (
-        <div>
-            {
-                (blog) ?
 
                 <div className="w-75 mx-auto my-5">
             <div>
@@ -32,9 +33,7 @@ const BlogsDetails = () => {
 
                 <p> {blog.description} </p>
             </div>
-        </div> :
-        <CircularProgress></CircularProgress>
-            }
+        
         </div>
     );
 };

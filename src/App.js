@@ -46,9 +46,9 @@ function App() {
                <Route path = '/blog/:id'>
                   <BlogsDetails></BlogsDetails>
                </Route>
-               <Route  path = '/dashboard'>
+               <PrivateRoute  path = '/dashboard'>
                   <DashBoardMain></DashBoardMain>
-               </Route>
+               </PrivateRoute>
             </Switch>
             
        </BrowserRouter>

@@ -1,4 +1,3 @@
-import React, { useEffect, useState } from 'react';
 
 import { Swiper, SwiperSlide } from "swiper/react";
 import 'swiper/swiper-bundle.min.css'
@@ -12,27 +11,28 @@ import SwiperCore, {
 } from 'swiper';
 import { Button } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
+import useBlog from '../../../hooks/useBlog';
+import { CircularProgress } from '@mui/material';
 
 SwiperCore.use([EffectCoverflow,Pagination]);
 
 const BlogHome = () => {
 
-    const [blogs, setBlogs] = useState([]);
+    // const [blogs, setBlogs] = useState([]);
 
-    useEffect(()=>{
-        fetch('https://safe-fjord-60058.herokuapp.com/blogs')
-        .then(res => res.json())
-        .then(data => setBlogs(data))
-    } , [])
+    // useEffect(()=>{
+    //     fetch('https://safe-fjord-60058.herokuapp.com/blogs')
+    //     .then(res => res.json())
+    //     .then(data => setBlogs(data))
+    // } , [])
+
+    const {blogs, blogLoading} = useBlog();
+
+    if(blogLoading){return <CircularProgress></CircularProgress>}
 
     return (
-        <div  
-        
-        >
 
-            <div 
-    
-    id="services"  className="py-5" >
+            <div  className="py-5 my-5">
      <h2 style={{color:' #f34612 '}} className="mb-3 fw-bold fs-1" >Blogs</h2>
     <div className="slider-portfolio">
     <Swiper effect={'coverflow'} grabCursor={true} centeredSlides={true} slidesPerView={'auto'} coverflowEffect={{
@@ -63,7 +63,7 @@ const BlogHome = () => {
                 </div>
                 <div >
                     <h4> {blog.title.slice(0,50)} </h4>
-                    <h5> {blog.author} </h5>
+                    <h5 style={{color:'green'}}> {blog.author} </h5>
                     <p>{blog.description.slice(0,250)}</p>
                     <Link to={`/blog/${blog._id}`}>
                     <Button className='w-50 mx-auto' variant='success'> Read More </Button>
@@ -82,8 +82,7 @@ const BlogHome = () => {
   </Swiper>
     </div>
     </div>
-             
-        </div>
+
     );
 };
 

@@ -3,7 +3,6 @@ import { Card, Col } from 'react-bootstrap';
 
 const UserResponse = ({feedback}) => {
 
-    console.log(feedback)
     return (
         <div > 
             <Col >

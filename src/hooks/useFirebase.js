@@ -16,7 +16,7 @@ const useFirebase = () => {
 
     const [error, setError] = useState("");
 
-    const [isLoading, setIsLoading] = useState(false)
+    const [isLoading, setIsLoading] = useState(true)
 
     const auth = getAuth();
 
@@ -74,7 +74,7 @@ const useFirebase = () => {
         .then((userCredential) => {
           // Signed in 
           // const user = userCredential.user;
-          const destination = location.state?.from || '/'
+          const destination = location?.state?.from || '/'
           history.replace(destination)
           
           // ...
@@ -99,8 +99,9 @@ const useFirebase = () => {
                setUser(user)
             } else {
              setUser({})
-             setIsLoading(false)
+             
             }
+            setIsLoading(false)
           });
     },[])
 
@@ -113,7 +114,9 @@ const useFirebase = () => {
             },
             body: JSON.stringify(user)
           })
-  }
+  }   
+
+  
 
     return{
         user,

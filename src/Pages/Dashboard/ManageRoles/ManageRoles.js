@@ -17,8 +17,8 @@ const ManageRoles = () => {
             label:'editor'
         },
         {
-            value: 'blogger',
-            label:'blogger'
+            value: 'user',
+            label:'user'
         },
     ] 
 
@@ -80,7 +80,7 @@ const ManageRoles = () => {
             </MenuItem>
           ))}
         </TextField> <br /> <br />
-                <Button variant="contained" type="submit" >Submit</Button>
+                <Button variant="contained" type="submit" >ADD</Button>
            
                 </form>
             </div>

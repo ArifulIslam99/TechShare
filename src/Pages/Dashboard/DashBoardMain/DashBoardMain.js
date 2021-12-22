@@ -22,30 +22,20 @@ import UserFeedBack from '../UserFeedback/UserFeedBack';
 
 const DashBoardMain = () => {
   
-  const [roles, setRoles] = useState(null);
-
-  
+  const { logOut,user} = useAuth()
 
   let { path, url } = useRouteMatch();
 
-  
-    const { logOut, user, isLoading} = useAuth()
-     
-   
+  const [roles, setRoles] = useState(null);
+  useEffect(()=>{
+    fetch(`https://safe-fjord-60058.herokuapp.com/users/${user.email}`)
+    .then(res => res.json())
+    .then(data => setRoles(data.role))
+  },[])
 
-      useEffect(()=>{
-        fetch(`https://safe-fjord-60058.herokuapp.com/users/${user.email}`)
-        .then(res => res.json())
-        .then(data => setRoles(data.role))
-      },[])
-  
-     
-    
-     
+
     return (
-       <div>
-          {
-            (!isLoading) ? 
+       
             <div>
             <Navbar bg="light" expand={false}>
           <Container fluid>
@@ -93,6 +83,7 @@ const DashBoardMain = () => {
                     <div>
                       <Nav.Link as={Link} to={`${url}/manageallblogs`}>Manage All Blogs</Nav.Link>
                   <Nav.Link as={Link} to={`${url}/addproduct`}>Add New Products</Nav.Link>
+                  <Nav.Link as={Link} to={`${url}/userfeedbacks`}>Users Message</Nav.Link>
                     </div> 
                   }
   
@@ -137,11 +128,7 @@ const DashBoardMain = () => {
             <ManageAllBlogs></ManageAllBlogs>
          </Route>
        </Switch>
-          </div> :
-
-          <CircularProgress></CircularProgress>
-
-          }
+          
        </div>
     );
 };

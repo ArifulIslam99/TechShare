@@ -17,6 +17,7 @@ const Blog = ({blog}) => {
         <Card.Img className='mx-auto' style={{width:'300px', height:'300px'}}  variant="top" src={`data:image/*;base64,${image}`} />
         <Card.Body>
           <Card.Title> {title.slice(0,50)} </Card.Title>
+          <h5 style={{color:'green'}}> {blog.author} </h5>
           <Card.Text>
               {description.slice(0,300)}
           </Card.Text>

@@ -41,7 +41,7 @@ const handleGoogleSignIn = ()=>{
         googleSignIn(history,location)
         
 }
-
+    if(isLoading){return <CircularProgress></CircularProgress>}
     return (
   
         <>
@@ -54,7 +54,7 @@ const handleGoogleSignIn = ()=>{
 
                 <h2>Please Login</h2>
                 
-                { (!isLoading) && <form onSubmit={handleLoginSubmit } 
+                 <form onSubmit={handleLoginSubmit } 
                 style={{color:'white'}}
                 >
                 <TextField 
@@ -86,13 +86,8 @@ const handleGoogleSignIn = ()=>{
                  sx={{bgcolor: 'success.main'}}
                  type="submit" 
                  variant="contained">Login</Button>
-                </form>  }
+                </form>  
 
-                {
-                    (isLoading) && 
-
-                    <CircularProgress color="inherit" />
-                }
                 <br />
 
                 <h6 style={{color:"red"}}>{error} </h6>

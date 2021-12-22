@@ -19,7 +19,7 @@ const ManageAllBlogs = () => {
         .then(res => res.json())
         .then(data => setBlogs(data))
     } , [])
-       console.log(blogs)
+
 
        const handleDeleteBlogs = id =>{
         const procced = window.confirm("Are You Sure to Delete This Blogs ?")
