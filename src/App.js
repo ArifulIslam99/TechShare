@@ -10,17 +10,19 @@ import DashBoardMain from './Pages/Dashboard/DashBoardMain/DashBoardMain';
 import PrivateRoute from './Pages/Login/PrivateRoute/PrivateRoute';
 import Navigation from './Pages/Shared/Navigation/Navigation';
 import AboutUS from '../src/Pages/AboutUs/AboutUS'
-
 import Blogs from './Pages/Blogs/Blogs';
 import BlogsDetails from './Pages/Blogs/BlogsDetails';
 
+import { Provider } from 'react-redux'
 
-
+import store from './Pages/ReduxStore';
+import AllProducts from './Pages/AllProducts/AllProducts';
 
 function App() {
   return (
     <div className="App">
          
+      <Provider store={store}>
       <AuthProvider>
       <BrowserRouter>
             <Navigation></Navigation>
@@ -43,6 +45,9 @@ function App() {
                <Route path = '/blogs'>
                   <Blogs></Blogs>
                </Route>
+               <Route path = '/gadgets'>
+                  <AllProducts></AllProducts>
+               </Route>
                <Route path = '/blog/:id'>
                   <BlogsDetails></BlogsDetails>
                </Route>
@@ -53,6 +58,7 @@ function App() {
             
        </BrowserRouter>
       </AuthProvider>
+      </Provider>
          
     </div>
   );

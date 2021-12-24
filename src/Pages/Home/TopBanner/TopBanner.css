@@ -1,0 +1,11 @@
+.typeEffect{
+    font-size: 38px;
+}
+
+
+@media screen and (max-width: 600px) {
+   .typeEffect{
+       font-size: 18px;
+       
+   }
+  }

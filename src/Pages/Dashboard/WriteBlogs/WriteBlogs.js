@@ -1,11 +1,9 @@
 import { TextField , Button} from '@mui/material';
 import React, { useState } from 'react';
-import { useHistory } from 'react-router';
 import useAuth from '../../../hooks/useAuth';
 import './WriteBlogs.css'
 
 const WriteBlogs = () => {
-    const history = useHistory()
     const [title, setTitle] = useState('');
     const [description, setDescription] = useState('')
     const [image, setImage] = useState(null)
@@ -44,7 +42,7 @@ const WriteBlogs = () => {
              }
 
     return (
-        <div className="mt-5">
+        <div className="mt-3 blog-box">
             <h2>Write a New Blog</h2>
 
             <div className="mt-4">

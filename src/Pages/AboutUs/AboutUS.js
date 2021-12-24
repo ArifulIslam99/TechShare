@@ -6,7 +6,7 @@ const AboutUS = () => {
     return (
         <div className="mt-5 ">
             <div>
-                <img style={{width:"40%", borderRadius:'50%'}} src={techshare} alt="" />
+                <img style={{width:"30%", borderRadius:'5%'}} src={techshare} alt="" />
             </div>
             <div className="my-3">
                 <h2 className="fw-bold fs-2">TechShare Bangladesh Limited.</h2>

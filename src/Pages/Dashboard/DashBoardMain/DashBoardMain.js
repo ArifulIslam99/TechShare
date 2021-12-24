@@ -14,8 +14,8 @@ import ManageRoles from '../ManageRoles/ManageRoles';
 import WriteBlogs from '../WriteBlogs/WriteBlogs';
 import ManageAllBlogs from '../../Blogs/ManageAllBlogs/ManageAllBlogs';
 import ManageMyBlogs from '../../Blogs/ManageMyBlogs/ManageMyBlogs';
-import { CircularProgress } from '@mui/material';
 import UserFeedBack from '../UserFeedback/UserFeedBack';
+import AddProduct from '../AddProduct/AddProduct';
 
 
 
@@ -57,6 +57,7 @@ const DashBoardMain = () => {
   
                      <div>
                       <Nav.Link as={Link} to={`${url}/myprofile`}>My Profile</Nav.Link>
+                
                   <Nav.Link as={Link} to={`${url}/recommendations`}>Saved Recommendation</Nav.Link>
                   <Nav.Link as={Link} to={`${url}/writeblogs`}>Write New Blog</Nav.Link>
                   <Nav.Link as={Link} to={`${url}/managemyblogs`}>Manage My Blogs</Nav.Link>
@@ -120,6 +121,9 @@ const DashBoardMain = () => {
          </Route>
          <Route path={`${path}/managemyblogs`}>
             <ManageMyBlogs></ManageMyBlogs>
+         </Route>
+         <Route path={`${path}/addproduct`}>
+            <AddProduct></AddProduct>
          </Route>
          <Route path={`${path}/userfeedbacks`}>
             <UserFeedBack></UserFeedBack>

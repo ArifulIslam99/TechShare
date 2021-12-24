@@ -32,7 +32,7 @@ const BlogHome = () => {
 
     return (
 
-            <div  className="py-5 my-5">
+            <div  className=" my-5">
      <h2 style={{color:' #f34612 '}} className="mb-3 fw-bold fs-1" >Blogs</h2>
     <div className="slider-portfolio">
     <Swiper effect={'coverflow'} grabCursor={true} centeredSlides={true} slidesPerView={'auto'} coverflowEffect={{
