@@ -1,4 +1,4 @@
-##TechShareBD 
+## TechShareBD 
 
 TechShare Bd is an Online platform to create tech concern among people of Bangladesh. From TechShare People can find the latest tech Updates and news, people can find what is the latest product or gadgets available in the market right now. 
 
@@ -7,7 +7,7 @@ Client-Side Code : https://github.com/ArifulIslam99/TechShare
 Server-Side Code: https://github.com/ArifulIslam99/techshare-server 
 
 
-####Features: 
+#### Features: 
 
 ->In the home page, there is a top banner about the title and description about the website. Down to the banner, there is a slider containing eight recent blogs. Down to the slider there are three sections containing the latest smartphones, laptops, and smartwatches. Down to this there is a contact form, any user can message to techshare for their interest and queries. 
 
