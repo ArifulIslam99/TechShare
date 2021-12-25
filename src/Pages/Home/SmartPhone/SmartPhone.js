@@ -14,7 +14,7 @@ const SmartPhone = () => {
             <h2 style={{color:' #f34612 '}} className="mb-3 fw-bold fs-1" >Trending SmartPhones</h2>
             <Row xs={1} md={3} className="mx-auto">
                 {
-                    smartphone.slice(0,6).map(product => <Phone product={product}></Phone>)
+                    smartphone.slice(0,6).map(product => <Phone product={product}></Phone>).reverse()
                 }
             </Row>
         </div>

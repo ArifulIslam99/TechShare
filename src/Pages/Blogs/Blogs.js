@@ -33,7 +33,7 @@ const Blogs = () => {
                 
                    key = {blog._id}
                    blog={blog}
-                    ></Blog>)
+                    ></Blog>).reverse()
             }
   
         </Row> 

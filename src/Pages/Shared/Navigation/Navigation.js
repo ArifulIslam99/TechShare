@@ -45,7 +45,11 @@ const Navigation = () => {
             {
               (user.displayName) &&
 
-              <div> {(userInfo?.photoURL) && <img style={{width:'35px', height:'35px'}} src={userInfo?.photoURL} alt="" />} <span style={{color:'black'}}> Welcome, {user.displayName} </span> <Button style={{padding:'5px', marginLeft:'2px', backgroundColor:'black'}} onClick={logOut}>LogOut</Button></div>
+              <div>
+                
+                 {/* {(user.photoURL) && <img style={{width:'35px', height:'35px'}} src={user.photoURL} alt="" />} */}
+                 
+                  <span style={{color:'black'}}> Welcome, {user.displayName} </span> <Button style={{padding:'5px', marginLeft:'2px', backgroundColor:'black'}} onClick={logOut}>LogOut</Button></div>
             }
 
         </Navbar.Collapse>

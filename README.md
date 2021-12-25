@@ -1,70 +1,34 @@
-# Getting Started with Create React App
+##TechShareBD 
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+TechShare Bd is an Online platform to create tech concern among people of Bangladesh. From TechShare People can find the latest tech Updates and news, people can find what is the latest product or gadgets available in the market right now. 
 
-## Available Scripts
+Live Link : https://techsharebd.com/ 
+Client-Side Code : https://github.com/ArifulIslam99/TechShare
+Server-Side Code: https://github.com/ArifulIslam99/techshare-server 
 
-In the project directory, you can run:
 
-### `npm start`
+####Features: 
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+->In the home page, there is a top banner about the title and description about the website. Down to the banner, there is a slider containing eight recent blogs. Down to the slider there are three sections containing the latest smartphones, laptops, and smartwatches. Down to this there is a contact form, any user can message to techshare for their interest and queries. 
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
 
-### `npm test`
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+->In the Gadget Page there are collections of the latest gadgets like smartphones, smartwatches, laptops. User Can see the price and info about the gadgets and understand what is perfect for him. 
 
-### `npm run build`
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+->About us page just containing the basic Info about TechShare BD. 
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-### `npm run eject`
+->In the Blog page, there are blogs and news about the latest tech updates. Users can read the blogs. Rate the blogs. Users Can write blogs from the user dashboard. 
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+->There is a dashboard for three different types of users. Admin, Editor and User. To access the dashboard, a user must log in to the application. This is a private route. Users can log in to the system through using Email and PassWord or Directly login through google. New Users have to sign up first or directly log in through google. 
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+->From the user dashboard, users can write new blogs from the write new blog section. Users can manage all their blogs from the Manage my blog section. User can see his favourite gadgets from the saved recommendation section. In the my profile section the user can see his profile information. Users can change their profile image and Date of birth. 
 
-## Learn More
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+->In the admin dashboard, admin can make a new admin, editor or make anyone a user. Admin can manage all the blogs, can add a new product, can manage all products. See the users feedback.  Editor will share similar roles except update administration and manage all products. 
 
-To learn React, check out the [React documentation](https://reactjs.org/).
 
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
