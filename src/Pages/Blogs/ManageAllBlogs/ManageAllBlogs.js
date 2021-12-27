@@ -30,7 +30,7 @@ const ManageAllBlogs = () => {
                 method: 'DELETE'
             }).then(res => res.json())
             .then(data => {
-                console.log(data)
+             
                if(data.deletedCount > 0) 
                {
                   alert('Blog Deleted Succesfully')

@@ -3,7 +3,7 @@ import { Row, Spinner } from 'react-bootstrap';
 import useProducts from '../../../hooks/useProducts' 
 
 import { connect } from 'react-redux';
-import Laptop from './Laptop';
+import SingleProduct from '../../AllProducts/SingleProduct';
 
 const Laptops = () => {
     
@@ -14,7 +14,10 @@ const Laptops = () => {
             <h2 style={{color:' #f34612 '}} className="mb-3 fw-bold fs-1" >Trending Laptops</h2>
             <Row xs={1} md={3} className="mx-auto">
                 {
-                    laptops.slice(0,6).map(product => <Laptop product={product}></Laptop> ).reverse()
+                    laptops.slice(0,6).map(product => <SingleProduct
+                        
+                        key={product._id}
+                        product={product}></SingleProduct> ).reverse()
                 }
             </Row>
         </div>
@@ -22,8 +25,6 @@ const Laptops = () => {
 };
 
 const mapToState = state => {
-    
-    console.log(state)
 
     return{
 

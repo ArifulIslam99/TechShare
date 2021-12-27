@@ -31,7 +31,7 @@ const MyProfile = () => {
             })
             .then(response => response.json())
             .then(data => {
-            console.log('Success:', data);
+           
              alert('Updated Successfully')
              
              document.getElementById("pic").reset(); 

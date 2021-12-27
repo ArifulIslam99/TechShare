@@ -6,7 +6,7 @@ const ManageRoles = () => {
 
     const [email, setEmail] = useState('');
     const [roles, setRoles] = useState('');
-     console.log(email, roles)
+
     const userRoles = [
         {
             value: 'admin',

@@ -9,26 +9,16 @@ import 'swiper/components/pagination/pagination.min.css'
 import SwiperCore, {
   EffectCoverflow,Pagination
 } from 'swiper';
-import { Button } from 'react-bootstrap';
+import { Button, Spinner } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import useBlog from '../../../hooks/useBlog';
-import { CircularProgress } from '@mui/material';
 
 SwiperCore.use([EffectCoverflow,Pagination]);
 
 const BlogHome = () => {
-
-    // const [blogs, setBlogs] = useState([]);
-
-    // useEffect(()=>{
-    //     fetch('https://safe-fjord-60058.herokuapp.com/blogs')
-    //     .then(res => res.json())
-    //     .then(data => setBlogs(data))
-    // } , [])
-
     const {blogs, blogLoading} = useBlog();
 
-    if(blogLoading){return <CircularProgress></CircularProgress>}
+    if(blogLoading){return <Spinner animation="border" variant="success"></Spinner> }
 
     return (
 
@@ -46,7 +36,7 @@ const BlogHome = () => {
      {
          blogs.slice(0,8).map(blog => 
             
-            <SwiperSlide>
+            <SwiperSlide key={blog._id}>
             <div 
             data-aos="zoom-in-up"
             data-aos-easing="linear"
@@ -70,7 +60,9 @@ const BlogHome = () => {
                     </Link>
                 </div>
             </div>
-        </SwiperSlide>
+        </SwiperSlide> 
+
+        
             )
      }
    

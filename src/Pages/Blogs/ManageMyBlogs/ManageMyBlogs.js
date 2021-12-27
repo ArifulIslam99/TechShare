@@ -27,7 +27,7 @@ const ManageMyBlogs = () => {
                 method: 'DELETE'
             }).then(res => res.json())
             .then(data => {
-                console.log(data)
+               
                if(data.deletedCount > 0) 
                {
                   alert('Blog Deleted Successfully' )
@@ -39,7 +39,7 @@ const ManageMyBlogs = () => {
         }
     } 
 
-    console.log(myBlogs)
+   
     return (
         <div>
             <h2>My Blogs</h2>

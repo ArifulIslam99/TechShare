@@ -31,7 +31,7 @@ const AddProduct = () => {
             })
             .then(response => response.json())
             .then(data => {
-            console.log('Success:', data);
+            
              alert('Product Uploaded Succesfully');
              document.getElementById("productForm").reset(); 
             })

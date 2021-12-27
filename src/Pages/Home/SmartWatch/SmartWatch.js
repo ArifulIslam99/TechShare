@@ -4,7 +4,7 @@ import useProducts from '../../../hooks/useProducts'
 
 
 import { connect } from 'react-redux';
-import Watch from './Watch';
+import SingleProduct from '../../AllProducts/SingleProduct';
 
 const SmartWatch = () => {
     
@@ -17,10 +17,12 @@ const SmartWatch = () => {
         > 
 
             
-            <h2 style={{color:' #f34612 '}} className="mb-3 fw-bold fs-1" >Trending SmartWatch</h2>
+            <h2 style={{color:' #f34612 '}} className="mb-3 fw-bold fs-1" >Trending SmartWatches</h2>
             <Row xs={1} md={3} className="mx-auto">
                 {
-                    smartwatch.slice(0,6).map(product => <Watch product={product}></Watch> )
+                    smartwatch.slice(0,6).map(product => <SingleProduct
+                        key={product._id}
+                        product={product}></SingleProduct> )
                 }
             </Row>
         </div>
@@ -29,7 +31,6 @@ const SmartWatch = () => {
 
 const mapToState = state => {
     
-    console.log(state)
 
     return{
 

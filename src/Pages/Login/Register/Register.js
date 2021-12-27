@@ -29,7 +29,7 @@ const Register = () => {
          setLoginData(newLoginData)
     } 
 
-    console.log(loginData)
+
     
     const handleGoogleSignIn = ()=>{
         googleSignIn(history)

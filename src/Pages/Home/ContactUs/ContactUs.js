@@ -21,7 +21,7 @@ const ContactUs = () => {
             })
             .then(response => response.json())
             .then(data => {
-             console.log('Success:', data);
+       
              alert('Thanks For Your Response!');
              document.getElementById('feedbackform').reset()
              
