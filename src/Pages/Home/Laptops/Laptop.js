@@ -1,10 +1,11 @@
-import React, { useState } from 'react';
-import { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Button, Card, Col, Modal } from 'react-bootstrap';
 import { useHistory } from 'react-router-dom';
-import useAuth from '../../hooks/useAuth';
+import useAuth from '../../../hooks/useAuth';
 
-const SingleProduct = ({product}) => { 
+const Laptop = ({product}) => { 
+    
+    
   const {user} = useAuth()
   const [show, setShow] = useState(false);
   const [existingRec, setExistingRec] = useState([]);
@@ -13,7 +14,7 @@ const SingleProduct = ({product}) => {
     fetch(`https://safe-fjord-60058.herokuapp.com/recommendations/${user.email}`)
     .then(res => res.json())
     .then(data => setExistingRec(data))
-  }) 
+  },[user.email]) 
   
     
     const handlesavedRecommendation = (id) =>{
@@ -49,9 +50,7 @@ const SingleProduct = ({product}) => {
 
     return (
         <Col 
-        data-aos="fade-in"
-        data-aos-easing="ease-out-cubic"
-        data-aos-duration="2000"
+        
         >
       <Card className='p-3 my-2'>
         <Card.Img className="img-fluid m-auto"  style={{width:'250px', height:'250px'}} src={`data:image/jpeg;charset=utf-8;base64,${product.image}`}alt="" variant="top" />
@@ -106,4 +105,4 @@ const SingleProduct = ({product}) => {
     );
 };
 
-export default SingleProduct;
+export default Laptop;

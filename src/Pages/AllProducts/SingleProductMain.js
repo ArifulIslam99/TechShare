@@ -4,7 +4,7 @@ import { Button, Card, Col, Modal } from 'react-bootstrap';
 import { useHistory } from 'react-router-dom';
 import useAuth from '../../hooks/useAuth';
 
-const SingleProduct = ({product}) => { 
+const SingleProductMain = ({product}) => { 
   const {user} = useAuth()
   const [show, setShow] = useState(false);
   const [existingRec, setExistingRec] = useState([]);
@@ -106,4 +106,4 @@ const SingleProduct = ({product}) => {
     );
 };
 
-export default SingleProduct;
+export default SingleProductMain;

@@ -3,18 +3,17 @@ import { useEffect } from 'react';
 import { useState } from 'react';
 import { Button, Card, Col, Modal } from 'react-bootstrap';
 import { useHistory } from 'react-router-dom';
-import useAuth from '../../../hooks/useAuth';
+
 
 const RecommendationProduct = ({id, recomendationId}) => {
     const [show, setShow] = useState(false);
     const history = useHistory();
     const [recomended, setRecomended] = useState([])
-    const {user} = useAuth()
     useEffect(()=>{
         fetch(`https://safe-fjord-60058.herokuapp.com/product/${id}`)
         .then(res => res.json())
         .then(data => setRecomended(data))
-    },[])
+    },[id])
     
 
     const deleteFromRecommendation = Eventid =>{
@@ -27,7 +26,8 @@ const RecommendationProduct = ({id, recomendationId}) => {
             if(data.deletedCount > 0) 
             {
                alert('Removed Successfully' )
-            history.go(0)
+               setShow(false)
+               history.go(0)
             } 
 
           

@@ -5,26 +5,52 @@ import { useEffect, useState } from "react";
 
     const [products, setProducts] = useState([]);
     const [productLoading, setProductLoading] = useState(true)
-
-
-     useEffect(()=>{
+    useEffect(()=>{
+        setProductLoading(true)
         fetch('https://safe-fjord-60058.herokuapp.com/products')
         .then(res => res.json())
         .then(data => {
             setProducts(data)
-            setProductLoading(false)
-         })
-    } , [])
-    const smartphone = products.filter(pr => pr.catagory==='SmartPhone')
-    const laptops = products.filter(pr => pr.catagory==='Laptop')
-    const smartwatch = products.filter(pr => pr.catagory==='SmartWatch')
+        }).finally(()=>setProductLoading(false))
+           
+    },[])
+
+    const [laptops, setLaptops] = useState([])
+    useEffect(()=>{
+        fetch('https://safe-fjord-60058.herokuapp.com/products/laptops')
+        .then(res => res.json())
+        .then(data => {
+            setLaptops(data)
+        })  
+    },[])
+
+    const [smartphones, setSmartphones] = useState([])
+    useEffect(()=>{
+        fetch('https://safe-fjord-60058.herokuapp.com/products/smartphones')
+        .then(res => res.json())
+        .then(data => {
+           setSmartphones(data)
+        })
+           
+    },[])
+
+    const [smartWatches, setSmartWatches] = useState([])
+    useEffect(()=>{
+       
+        fetch('https://safe-fjord-60058.herokuapp.com/products/smartwatches')
+        .then(res => res.json())
+        .then(data => {
+            setSmartWatches(data)
+        })
+           
+    },[])
     return {
-        
         products,
         productLoading,
-        smartphone,
         laptops,
-        smartwatch
+        smartWatches,
+        smartphones,
+        setProducts
     };
 
 }

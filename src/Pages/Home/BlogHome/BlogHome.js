@@ -16,15 +16,19 @@ import useBlog from '../../../hooks/useBlog';
 SwiperCore.use([EffectCoverflow,Pagination]);
 
 const BlogHome = () => {
-    const {blogs, blogLoading} = useBlog();
-
-    if(blogLoading){return <Spinner animation="border" variant="success"></Spinner> }
+    const {activeBlogs} = useBlog()
 
     return (
 
             <div  className=" my-5">
      <h2 style={{color:' #f34612 '}} className="mb-3 fw-bold fs-1" >Blogs</h2>
     <div className="slider-portfolio">
+
+    {
+                 
+                 (activeBlogs.length < 1) && <Spinner animation="border" variant="success"></Spinner> 
+             
+         }
     <Swiper effect={'coverflow'} grabCursor={true} centeredSlides={true} slidesPerView={'auto'} coverflowEffect={{
   "rotate": 50,
   "stretch": 0,
@@ -34,7 +38,7 @@ const BlogHome = () => {
 }} pagination={true} className="mySwiper">
      
      {
-         blogs.slice(0,8).map(blog => 
+         activeBlogs.slice(0,5).map(blog => 
             
             <SwiperSlide key={blog._id}>
             <div 
@@ -65,12 +69,6 @@ const BlogHome = () => {
         
             )
      }
-   
-  
-
-  
-
-
   </Swiper>
     </div>
     </div>

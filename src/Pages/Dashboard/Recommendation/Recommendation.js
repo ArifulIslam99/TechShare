@@ -11,12 +11,12 @@ const Recommendation = () => {
         fetch(`https://safe-fjord-60058.herokuapp.com/recommendations/${user.email}`)
         .then(res => res.json())
         .then(data => setProducts(data))
-    },[]) 
+    },[user.email]) 
 
      
     
     return (
-        <div style={{width:'80%'}} className='mx-auto'>
+        <div style={{width:'70%'}} className='mx-auto'>
             <h2 style={{color:' #f34612 '}} className="mb-3 fw-bold fs-1" >Saved Recommendations</h2>
               
               <Row xs={1} md={2} className="mx-auto">

@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import { Button, Container, Nav, Navbar } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import useAuth from '../../../hooks/useAuth';
@@ -7,12 +7,12 @@ import logo from '../../../images/techsharelogo.png'
 
 
 const Navigation = () => {
-  const [userInfo, setUserInfo] = useState([]);
-  useEffect(()=>{
-      fetch(`https://safe-fjord-60058.herokuapp.com/users/${user.email}`)
-      .then(res => res.json())
-      .then(data => setUserInfo(data))
-    },[])
+  // const [userInfo, setUserInfo] = useState([]);
+  // useEffect(()=>{
+  //     fetch(`https://safe-fjord-60058.herokuapp.com/users/${user.email}`)
+  //     .then(res => res.json())
+  //     .then(data => setUserInfo(data))
+  //   },[])
   const {user, logOut} = useAuth()
     
     return (
@@ -26,6 +26,7 @@ const Navigation = () => {
             <Nav.Link as={Link} to="/gadgets" >Gadgets</Nav.Link>
             <Nav.Link as={Link} to="/about">About Us</Nav.Link>
             <Nav.Link as={Link} to="/blogs">Blogs</Nav.Link>
+            <Nav.Link as={Link} to="/findmydevice">Find My Device</Nav.Link>
             {
               (user.uid) &&
 

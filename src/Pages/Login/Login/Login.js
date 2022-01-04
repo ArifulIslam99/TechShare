@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 import { Link, useHistory, useLocation } from 'react-router-dom';
 import useAuth from '../../../hooks/useAuth';
 import loginbg from '../../../images/login-bg.jpg';
+import Footer from '../../Shared/Footer/Footer';
 import './Login.css'
 
 const Login = () => {  
@@ -96,8 +97,10 @@ const handleGoogleSignIn = ()=>{
                 <Button onClick={handleGoogleSignIn} variant="contained" sx={{ bgcolor: 'error.main', textTransform:'lowercase', marginRight:'5px'}}><i class="fab fa-google"></i>oogle Sign In</Button>
 
                 
+ 
+            </div> 
 
-            </div>
+            <Footer></Footer>
         </>
         
     );

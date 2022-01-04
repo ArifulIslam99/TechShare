@@ -1,10 +1,12 @@
 import React from 'react';
-import techshare from '../../images/techsharebd.jpg'
+import techshare from '../../images/techsharelogo.png'
+import Footer from '../Shared/Footer/Footer';
 
 
 const AboutUS = () => {
     return (
-        <div className="mt-5 ">
+        <>
+          <div className="my-2">
             <div>
                 <img style={{width:"30%", borderRadius:'5%'}} src={techshare} alt="" />
             </div>
@@ -16,6 +18,8 @@ const AboutUS = () => {
 
             
         </div>
+        <Footer></Footer>
+        </>
     );
 };
 

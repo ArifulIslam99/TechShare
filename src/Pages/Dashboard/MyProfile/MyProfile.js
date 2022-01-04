@@ -7,7 +7,7 @@ const MyProfile = () => {
     const [image, setImage] = useState(null) 
     const [userInfo, setUserInfo] = useState([]);
     const [dob, setDob] = useState(null) 
-
+    const { user } = useAuth();
     const history = useHistory();
 
     
@@ -15,12 +15,19 @@ const MyProfile = () => {
         fetch(`https://safe-fjord-60058.herokuapp.com/users/${user.email}`)
         .then(res => res.json())
         .then(data => setUserInfo(data))
-      },[])
+      },[user.email])
 
       const handleProfileUpdate = e =>{ 
         e.preventDefault()
         const formData = new FormData()
-        formData.append('dob', dob)
+        if(!userInfo.dob)
+        {
+          formData.append('dob', dob)
+        }
+        else{
+          formData.append('dob', userInfo.dob)
+        }
+       
         formData.append('image', image)
         formData.append('email', user.email)
 
@@ -43,7 +50,7 @@ const MyProfile = () => {
        
       }
       
-    const { user } = useAuth();
+   
     return ( 
         <div className='my-3'>
         <div className='mt-3 w-75 mx-auto'>
@@ -60,7 +67,7 @@ const MyProfile = () => {
                           <p>Name: {userInfo.displayName} </p>
                           <p>Email : {userInfo.email} </p>
                           </div>
-                          <div className='col-lg-6 mx-auto'>
+                          <div className='col-lg-6 mx-auto my-3'>
                             {
                               (userInfo.dob) ? 
 

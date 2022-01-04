@@ -1,34 +1,28 @@
-import { CircularProgress } from '@mui/material';
-import { Row } from 'react-bootstrap';
+import { Row, Spinner } from 'react-bootstrap';
+import Footer from '../Shared/Footer/Footer';
 import useBlog from '../../hooks/useBlog';
 import Blog from './Blog';
 
 
 const Blogs = () => {
-
-//     const [blogs, setBlogs] = useState([]);
-
-//     useEffect(()=>{
-//         fetch('https://safe-fjord-60058.herokuapp.com/blogs')
-//         .then(res => res.json())
-//         .then(data => setBlogs(data))
-//     } , [])
-
-        
-        const { blogs, blogLoading } = useBlog();
-
-        if(blogLoading){return <CircularProgress></CircularProgress>}
+    
+        const { activeBlogs } = useBlog();
 
     return (
         <div> 
            
             <h2 className="my-5" style={{fontWeight:'600', color:'orangered', fontSize:'42px'}}> Latest Tech Updates and News </h2>
 
+            {
+                 
+                    (activeBlogs.length < 1) && <Spinner animation="border" variant="success"></Spinner> 
+                
+            }
              <Row xs={1} md={3} className="mx-auto"> 
 
 
             {
-                blogs.map(blog => <Blog 
+                activeBlogs.map(blog => <Blog 
                 
                 
                    key = {blog._id}
@@ -37,7 +31,7 @@ const Blogs = () => {
             }
   
         </Row> 
-        
+         <Footer></Footer>
         </div>
     );
 };

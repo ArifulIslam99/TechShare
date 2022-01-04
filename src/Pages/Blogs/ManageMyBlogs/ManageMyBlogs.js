@@ -16,7 +16,7 @@ const ManageMyBlogs = () => {
         fetch(`https://safe-fjord-60058.herokuapp.com/blogs/${user.email}`)
         .then(res => res.json())
         .then(data => setMyBlogs(data))
-    },[])
+    },[user.email])
 
     const handleDeleteBlogs = id =>{
         const procced = window.confirm("Are You Sure to Delete This Blog ?")

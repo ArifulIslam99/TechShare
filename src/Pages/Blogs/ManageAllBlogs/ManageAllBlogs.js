@@ -8,22 +8,15 @@ import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
 
-
-
-
 const ManageAllBlogs = () => {
     const [blogs, setBlogs] = useState([]);
-
     useEffect(()=>{
         fetch('https://safe-fjord-60058.herokuapp.com/blogs')
         .then(res => res.json())
         .then(data => setBlogs(data))
     } , [])
-
-
-       const handleDeleteBlogs = id =>{
+        const handleDeleteBlogs = id =>{
         const procced = window.confirm("Are You Sure to Delete This Blogs ?")
-        
         if(procced)
         {
             fetch(`https://safe-fjord-60058.herokuapp.com/blog/${id}`,{
@@ -34,6 +27,7 @@ const ManageAllBlogs = () => {
                if(data.deletedCount > 0) 
                {
                   alert('Blog Deleted Succesfully')
+
                   
                } 
                const remainigBlogs = blogs.filter(product => product._id !== id)
@@ -41,9 +35,25 @@ const ManageAllBlogs = () => {
             })
         }
     } 
+
+     const handleUpdateBlogs = id =>{
+
+      fetch(`https://safe-fjord-60058.herokuapp.com/blog/${id}`,{
+        method: 'PUT'
+    }).then(res => res.json())
+    .then(data => {
+      if(data.modifiedCount > 0)
+      {
+        alert('Status Changed Successfully')
+      }
+    })
+
+     }
+
+
     return (
        <div style={{width:'90%', height:'100%'}} className='mx-auto' >
-           <h2>Manage All The Blogs</h2>
+           <h2 className="my-3">Manage All The Blogs</h2>
            <div>
            <TableContainer component={Paper}>
       <Table sx={{ minWidth: 650 }} aria-label="simple table">
@@ -67,7 +77,7 @@ const ManageAllBlogs = () => {
               </TableCell>
               <TableCell align="right">{row.title.slice(0,30)}</TableCell>
               <TableCell align="right">{row.author}</TableCell>
-              <TableCell align="right">{row.status} <button><i class="fas fa-edit"></i></button> </TableCell>
+              <TableCell align="right">{row.status} <button onClick={()=>handleUpdateBlogs(row._id)}><i class="fas fa-edit"></i></button> </TableCell>
               <TableCell align="right"><button onClick={()=>handleDeleteBlogs(row._id)}><i className="fas fa-trash-alt"></i></button></TableCell>
             </TableRow>
           ))}

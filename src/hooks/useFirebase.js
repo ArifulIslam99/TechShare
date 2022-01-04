@@ -41,7 +41,16 @@ const useFirebase = () => {
       }).catch((error) => {
         
       });
+      alert('Account Created Successfully')
       history.push('/')
+
+       function load()
+       {
+         history.go(0)
+       }
+      setTimeout(load, 5000)
+      
+      
    
   })
   .catch((error) => {
@@ -103,7 +112,7 @@ const useFirebase = () => {
             }
             setIsLoading(false)
           });
-    },[])
+    },[auth])
 
   const saveUserDb = (email, displayName, method) =>{
           const user = {email, displayName, role:'user'}
@@ -115,7 +124,6 @@ const useFirebase = () => {
             body: JSON.stringify(user)
           })
   }   
-
   
 
     return{
@@ -125,7 +133,7 @@ const useFirebase = () => {
         userLogin,
         logOut,
         isLoading,
-        googleSignIn
+        googleSignIn,
     }
 
 }

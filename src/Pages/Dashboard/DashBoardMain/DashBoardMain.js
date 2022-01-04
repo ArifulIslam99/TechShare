@@ -16,6 +16,7 @@ import ManageAllBlogs from '../../Blogs/ManageAllBlogs/ManageAllBlogs';
 import ManageMyBlogs from '../../Blogs/ManageMyBlogs/ManageMyBlogs';
 import UserFeedBack from '../UserFeedback/UserFeedBack';
 import AddProduct from '../AddProduct/AddProduct';
+import ManageAllProducts from '../ManageAllProducts/ManageAllProducts';
 
 
 
@@ -31,7 +32,7 @@ const DashBoardMain = () => {
     fetch(`https://safe-fjord-60058.herokuapp.com/users/${user.email}`)
     .then(res => res.json())
     .then(data => setRoles(data.role))
-  },[])
+  },[user.email])
 
 
     return (
@@ -72,7 +73,7 @@ const DashBoardMain = () => {
                       <Nav.Link as={Link} to={`${url}/updateroles`}>Update Administration</Nav.Link>
                   <Nav.Link as={Link} to={`${url}/manageallblogs`}>Manage All Blogs</Nav.Link>
                   <Nav.Link as={Link} to={`${url}/addproduct`}>Add New Products</Nav.Link>
-                  <Nav.Link as={Link} to={`${url}/manageusers`}>Manage All Products</Nav.Link>
+                  <Nav.Link as={Link} to={`${url}/manageallproducts`}>Manage All Products</Nav.Link>
                   <Nav.Link as={Link} to={`${url}/userfeedbacks`}>Users Message</Nav.Link>
                     </div> 
                     
@@ -127,6 +128,9 @@ const DashBoardMain = () => {
          </Route>
          <Route path={`${path}/userfeedbacks`}>
             <UserFeedBack></UserFeedBack>
+         </Route>
+         <Route path={`${path}/manageallproducts`}>
+            <ManageAllProducts></ManageAllProducts>
          </Route>
          <Route path={`${path}/manageallblogs`}>
             <ManageAllBlogs></ManageAllBlogs>
