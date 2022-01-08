@@ -7,12 +7,7 @@ import logo from '../../../images/techsharelogo.png'
 
 
 const Navigation = () => {
-  // const [userInfo, setUserInfo] = useState([]);
-  // useEffect(()=>{
-  //     fetch(`https://safe-fjord-60058.herokuapp.com/users/${user.email}`)
-  //     .then(res => res.json())
-  //     .then(data => setUserInfo(data))
-  //   },[])
+  
   const {user, logOut} = useAuth()
     
     return (

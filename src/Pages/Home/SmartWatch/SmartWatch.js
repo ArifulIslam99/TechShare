@@ -1,8 +1,7 @@
 import React from 'react';
 import { Row, Spinner } from 'react-bootstrap';
 import useProducts from '../../../hooks/useProducts';
-import SingleProduct from '../../AllProducts/SingleProduct';
-// import Watch from './Watch'
+import Watch from './Watch'
 
 const SmartWatch = () => {
     
@@ -32,9 +31,9 @@ const SmartWatch = () => {
                 {
                     smartWatches.slice(0,6).map(product =>
                   
-                             <SingleProduct
+                             <Watch
                         key={product._id}
-                        product={product}></SingleProduct> 
+                        product={product}></Watch> 
                  
                         
                         )

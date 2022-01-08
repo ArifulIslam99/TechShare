@@ -17,6 +17,8 @@ import ManageMyBlogs from '../../Blogs/ManageMyBlogs/ManageMyBlogs';
 import UserFeedBack from '../UserFeedback/UserFeedBack';
 import AddProduct from '../AddProduct/AddProduct';
 import ManageAllProducts from '../ManageAllProducts/ManageAllProducts';
+import AdminRoute from '../../Login/AdminRoute/AdminRoute';
+
 
 
 
@@ -26,7 +28,7 @@ const DashBoardMain = () => {
   const { logOut,user} = useAuth()
 
   let { path, url } = useRouteMatch();
-
+  
   const [roles, setRoles] = useState(null);
   useEffect(()=>{
     fetch(`https://safe-fjord-60058.herokuapp.com/users/${user.email}`)
@@ -96,7 +98,7 @@ const DashBoardMain = () => {
                   </Nav> 
                   <Nav style={{marginTop:'20%'}}>
                   
-                  <Button onClick={logOut} className="w-50"><i class="fas fa-sign-out-alt"></i>logOut</Button>
+                  <Button onClick={logOut} className="w-50"><i className="fas fa-sign-out-alt"></i>logOut</Button>
                   </Nav>
               </Offcanvas.Body>
             </Navbar.Offcanvas>
@@ -117,24 +119,24 @@ const DashBoardMain = () => {
          <Route path={`${path}/writeblogs`}>
            <WriteBlogs></WriteBlogs>
          </Route>
-         <Route path={`${path}/updateroles`}>
+         <AdminRoute path={`${path}/updateroles`}>
             <ManageRoles></ManageRoles>
-         </Route>
+         </AdminRoute>
          <Route path={`${path}/managemyblogs`}>
             <ManageMyBlogs></ManageMyBlogs>
          </Route>
-         <Route path={`${path}/addproduct`}>
+         <AdminRoute path={`${path}/addproduct`}>
             <AddProduct></AddProduct>
-         </Route>
-         <Route path={`${path}/userfeedbacks`}>
+         </AdminRoute>
+         <AdminRoute path={`${path}/userfeedbacks`}>
             <UserFeedBack></UserFeedBack>
-         </Route>
-         <Route path={`${path}/manageallproducts`}>
+         </AdminRoute>
+         <AdminRoute path={`${path}/manageallproducts`}>
             <ManageAllProducts></ManageAllProducts>
-         </Route>
-         <Route path={`${path}/manageallblogs`}>
+         </AdminRoute>
+         <AdminRoute path={`${path}/manageallblogs`}>
             <ManageAllBlogs></ManageAllBlogs>
-         </Route>
+         </AdminRoute>
        </Switch>
           
        </div>

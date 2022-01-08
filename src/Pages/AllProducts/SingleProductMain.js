@@ -9,11 +9,24 @@ const SingleProductMain = ({product}) => {
   const [show, setShow] = useState(false);
   const [existingRec, setExistingRec] = useState([]);
   const history = useHistory()
+
+
   useEffect(()=>{
+
+    let isSubscribe = true;
     fetch(`https://safe-fjord-60058.herokuapp.com/recommendations/${user.email}`)
     .then(res => res.json())
-    .then(data => setExistingRec(data))
-  }) 
+    .then(data => {
+      if(isSubscribe)
+      {
+        setExistingRec(data)
+      }
+    })
+
+    return () => {
+      isSubscribe = false;
+    }
+  },[user.email]) 
   
     
     const handlesavedRecommendation = (id) =>{

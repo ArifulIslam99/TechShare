@@ -1,8 +1,7 @@
 import React from 'react';
 import { Row, Spinner } from 'react-bootstrap';
 import useProducts from '../../../hooks/useProducts';
-import SingleProduct from '../../AllProducts/SingleProduct';
-
+import Laptop from './Laptop'
 // 
 
 const Laptops = () => {
@@ -26,10 +25,10 @@ const Laptops = () => {
          }
          <Row xs={1} md={3} className="mx-auto">
                 {
-                    laptops.slice(0,6).map(product => <SingleProduct
+                    laptops.slice(0,6).map(product => <Laptop
                         
                         key={product._id}
-                        product={product}></SingleProduct> )
+                        product={product}></Laptop> )
                 }
             </Row>
         </div>

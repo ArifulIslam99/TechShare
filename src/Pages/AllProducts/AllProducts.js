@@ -2,7 +2,6 @@ import React,  {useState} from 'react';
 import { Button, FormControl, InputGroup, Row, Spinner } from 'react-bootstrap';
 import useProducts from '../../hooks/useProducts';
 import Footer from '../Shared/Footer/Footer';
-// import SingleProduct from './SingleProduct';
 import SingleProductMain from './SingleProductMain';
 
 const AllProducts = () => {

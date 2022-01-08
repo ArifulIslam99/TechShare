@@ -4,7 +4,7 @@ import { useState } from 'react';
 import img1 from '../../images/laptop.jpg'
 import img2 from '../../images/smartphone.jpeg'
 import img3 from '../../images/smartwatch.webp'
-import img4 from '../../images/photography.jpg'
+import img4 from '../../images/photography.webp'
 import img5 from '../../images/performance.jpg'
 import img6 from '../../images/balanced.webp'
 import PerfectDevices from './PerfectDevices';
@@ -27,7 +27,7 @@ const FindMyDevice = () => {
        <div className='mb-5'>
             <div
             
-            data-aos="zoom-in"
+            data-aos="fade-up"
             data-aos-easing="linear"
             data-aos-duration="1500"
 
@@ -58,7 +58,7 @@ const FindMyDevice = () => {
              
 
                 <div
-                data-aos="zoom-in"
+                data-aos="fade-up"
                 data-aos-easing="linear"
                 data-aos-duration="1500"
                 className='row w-75 mx-auto'>
@@ -91,7 +91,7 @@ const FindMyDevice = () => {
                 
 
                 <div  
-                data-aos="zoom-in"
+                data-aos="fade-up"
                 data-aos-easing="linear"
                 data-aos-duration="1500"
                 
@@ -99,17 +99,20 @@ const FindMyDevice = () => {
                      <h2  className='mb-4 fw-bold' style={{color:'orangered', fontSize:'36px'}}>
                  Tell Us Your Approximate Budget
                 </h2>
-                     <div onClick={()=>setBudget('20,000')} className='col-lg-2 budget catagory'>
+                     <div onClick={()=>setBudget(20000)} className='col-lg-2 budget catagory'>
                          <p> 20,000</p>
                      </div>
-                     <div onClick={()=>setBudget('30,000')} className='col-lg-3 budget catagory'>
+                     <div onClick={()=>setBudget(30000)} className='col-lg-2 budget catagory'>
                          <p> 30,000</p>
                      </div>
-                     <div onClick={()=>setBudget('40,000')} className='col-lg-3 budget catagory'>
+                     <div onClick={()=>setBudget(40000)} className='col-lg-2 budget catagory'>
                          <p> 40,000</p>
                      </div>
-                     <div onClick={()=>setBudget('10,0000')} className='col-lg-2 budget catagory'>
-                         <p>50, 000 +</p>
+                     <div onClick={()=>setBudget(60000)} className='col-lg-2 budget catagory'>
+                         <p> 60,000</p>
+                     </div>
+                     <div onClick={()=>setBudget(1000000)} className='col-lg-2 budget catagory'>
+                         <p>60,000 +</p>
                      </div>
                  </div>
                    

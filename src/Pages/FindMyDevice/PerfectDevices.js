@@ -21,12 +21,12 @@ const PerfectDevices = ({requirment}) => {
            
     },[requirment.type])
      
-        const filterProducts = products.filter(product => (product.priority === requirment.speciality && parseInt(requirment.budget) <  parseInt(product.price)) )
+        const filterProducts = products.filter(product => (product.priority === requirment.speciality && requirment.budget >  parseInt(product.price.replace(/,/g, ''))) )
 
     return (
 
         
-        <div>
+        <div style={{width: '85%'}} className='mx-auto'>
            <h2 className="my-5" style={{fontWeight:'600', color:'orangered', fontSize:'42px'}}> Best Choices For You </h2> 
 
 

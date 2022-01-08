@@ -16,10 +16,10 @@ const Main = () => {
          
           <TopBanner></TopBanner>
            <BlogHome></BlogHome>
-           <FindMyDeviceBanner></FindMyDeviceBanner>
            <SmartPhone></SmartPhone>
            <Laptops></Laptops>
            <SmartWatch></SmartWatch>
+           <FindMyDeviceBanner></FindMyDeviceBanner>
            <MidBanner></MidBanner>
         <ContactUs></ContactUs>
         <Footer></Footer>

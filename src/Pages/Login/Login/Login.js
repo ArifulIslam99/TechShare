@@ -94,7 +94,7 @@ const handleGoogleSignIn = ()=>{
                 <h6 style={{color:"red"}}>{error} </h6>
                 <p className="alternate-msg">New User ? <Link style={{textDecoration:'none', color:'orange'}} to="/register">Please Signup first</Link> </p> 
                 <p>----- OR -----</p>
-                <Button onClick={handleGoogleSignIn} variant="contained" sx={{ bgcolor: 'error.main', textTransform:'lowercase', marginRight:'5px'}}><i class="fab fa-google"></i>oogle Sign In</Button>
+                <Button onClick={handleGoogleSignIn} variant="contained" sx={{ bgcolor: 'error.main', textTransform:'lowercase', marginRight:'5px'}}><i className="fab fa-google"></i>oogle Sign In</Button>
 
                 
  

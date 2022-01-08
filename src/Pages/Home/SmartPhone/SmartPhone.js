@@ -1,13 +1,11 @@
 import React from 'react';
 import { Row, Spinner } from 'react-bootstrap';
 import useProducts from '../../../hooks/useProducts'
-import SingleProduct from '../../AllProducts/SingleProduct';
-// import Phone from './Phone';
+import Phone from './Phone';
 
 const SmartPhone = () => {
     
     const {smartphones} = useProducts()
-    // const smartphones = products.filter(pr => pr.catagory==='SmartPhone')
 
     return (
         <div 
@@ -25,10 +23,10 @@ const SmartPhone = () => {
          }
             <Row xs={1} md={3} className="mx-auto">
                 {
-                    smartphones.slice(0,6).map(product => <SingleProduct 
+                    smartphones.slice(0,6).map(product => <Phone
                         
                         key={product._id}
-                        product={product}></SingleProduct> )
+                        product={product}></Phone> )
                 }
             </Row>
         </div>

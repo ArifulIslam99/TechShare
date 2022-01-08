@@ -15,7 +15,7 @@ const ManageAllProducts = () => {
        const {products, setProducts} = useProducts()
   
        const handleDeleteProducts = id =>{
-        const procced = window.confirm("Are You Sure to Delete This Blogs ?")
+        const procced = window.confirm("Are You Sure to Delete This Product ?")
         
         if(procced)
         {

@@ -127,7 +127,7 @@ const Register = () => {
                <h6 style={{color:"red"}}>{error} </h6>
                <p className="alternate-msg">Already Registered ? <Link style={{textDecoration:'none', color:'orange'}} to="/login">Please Login</Link> </p> 
                <p>----- OR -----</p>
-               <Button onClick={handleGoogleSignIn} variant="contained" sx={{ bgcolor: 'error.main', textTransform:'lowercase'}}><i class="fab fa-google"></i>oogle Sign In</Button>
+               <Button onClick={handleGoogleSignIn} variant="contained" sx={{ bgcolor: 'error.main', textTransform:'lowercase'}}><i className="fab fa-google"></i>oogle Sign In</Button>
 
            </div>
        </>

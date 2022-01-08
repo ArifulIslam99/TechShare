@@ -72,7 +72,7 @@ const MyProfile = () => {
                               (userInfo.dob) ? 
 
                               <p> Date of Birth : {userInfo.dob} </p>:
-                              <input onChange={e => setDob(e.target.value)} type="date" name="dob" id="" />
+                               <input onChange={e => setDob(e.target.value)} type="date" name="dob" id="" />
                             }
                             <p>Role: {userInfo.role} </p>
                           </div>

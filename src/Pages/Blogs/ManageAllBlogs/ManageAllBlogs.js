@@ -77,7 +77,7 @@ const ManageAllBlogs = () => {
               </TableCell>
               <TableCell align="right">{row.title.slice(0,30)}</TableCell>
               <TableCell align="right">{row.author}</TableCell>
-              <TableCell align="right">{row.status} <button onClick={()=>handleUpdateBlogs(row._id)}><i class="fas fa-edit"></i></button> </TableCell>
+              <TableCell align="right">{row.status} <button onClick={()=>handleUpdateBlogs(row._id)}><i className="fas fa-edit"></i></button> </TableCell>
               <TableCell align="right"><button onClick={()=>handleDeleteBlogs(row._id)}><i className="fas fa-trash-alt"></i></button></TableCell>
             </TableRow>
           ))}

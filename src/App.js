@@ -27,7 +27,7 @@ const AboutUS = lazy(() => import('../src/Pages/AboutUs/AboutUS'))
 const Blogs = lazy(() => import('./Pages/Blogs/Blogs'))
 const BlogsDetails = lazy(() => import('./Pages/Blogs/BlogsDetails'))
 const AllProducts = lazy(() => import('./Pages/AllProducts/AllProducts'))
-const PerfectDevices = lazy(() => import('./Pages/FindMyDevice/PerfectDevices'))
+const Notfound = lazy (()=> import('../src/Pages/NotFound/Notfound'))
 
 function App() {
   return (
@@ -71,6 +71,9 @@ function App() {
           <PrivateRoute  path = '/dashboard'>
              <DashBoardMain></DashBoardMain>
           </PrivateRoute>
+          <Route path='*'>
+             <Notfound></Notfound>
+          </Route>
        </Switch>         
   </BrowserRouter>
  </AuthProvider>

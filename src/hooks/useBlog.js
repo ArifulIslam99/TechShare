@@ -5,14 +5,28 @@ const useBlog = () =>{
 
     const [blogs, setBlogs] = useState([]);
     let activeBlogs = [];
+
+    const [isSubscribed, setIsSubscribed] = useState(true)
+
+    
     useEffect(()=>{
-        fetch('https://safe-fjord-60058.herokuapp.com/blogs')
+
+            fetch('https://safe-fjord-60058.herokuapp.com/blogs')
         .then(res => res.json())
         .then(data => {
-            setBlogs(data)
+            if(isSubscribed)
+            {
+                setBlogs(data)
+            }
         })
+
+        return () => {
+            setIsSubscribed(false)
+        }
+        
            
     },[])
+    
    
     for(const blog of blogs)
     {
@@ -27,6 +41,7 @@ const useBlog = () =>{
     return {
        blogs,
        activeBlogs
+   
     };
 
 }
