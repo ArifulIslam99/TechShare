@@ -1,10 +1,17 @@
 const firebaseConfig = {
-    apiKey: "AIzaSyBcxcL_gIOyQDyfeCUFvAOg_cRy3S3NvhI",
-    authDomain: "project-techshare.firebaseapp.com",
-    projectId: "project-techshare",
-    storageBucket: "project-techshare.appspot.com",
-    messagingSenderId: "873250689174",
-    appId: "1:873250689174:web:7bda4607eedb8bb762f2b7"
-  };
+
+  apiKey: process.env.React_App_api_Key,
+
+  authDomain: process.env.React_App_auth_Domain,
+
+  projectId: process.env.React_App_project_Id,
+
+  storageBucket: process.env.React_App_storage_Bucket,
+
+  messagingSenderId: process.env.React_App_messaging_Sender_Id,
+
+  appId: process.env.React_App_app_Id
+
+};
 
   export default firebaseConfig;
