@@ -5,7 +5,7 @@ import { useEffect, useState } from "react";
 
     const [products, setProducts] = useState([]);
 
-
+    
     
 
     useEffect(()=>{
@@ -24,6 +24,8 @@ import { useEffect, useState } from "react";
         }
            
     },[])
+
+
 
     const [laptops, setLaptops] = useState([])
     useEffect(()=>{

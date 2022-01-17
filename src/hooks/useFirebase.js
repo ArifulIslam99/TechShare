@@ -26,7 +26,7 @@ const useFirebase = () => {
 
         setIsLoading(true)
         createUserWithEmailAndPassword(auth, email, password)
-  .then((userCredential) => {
+       .then((userCredential) => {
     
     // const user = userCredential.user;
     const newUser = {email, displayName: name};
@@ -125,19 +125,6 @@ const useFirebase = () => {
           })
   }   
   
-  const [roles, setRoles] = useState(null);
-  useEffect(()=>{
-    fetch(`https://safe-fjord-60058.herokuapp.com/users/${user.email}`)
-    .then(res => res.json())
-    .then(data => {
-      if(data)
-      {
-        setRoles(data.role)
-      }
-    })
-  },[user.email])
-
-
 
     return{
         user,
@@ -147,9 +134,6 @@ const useFirebase = () => {
         logOut,
         isLoading,
         googleSignIn,
-        roles
-        
-      
     }
 
 }
