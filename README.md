@@ -34,3 +34,35 @@ Server-Side Code: https://github.com/ArifulIslam99/techshare-server
 
 ## UI of the Applications
 ![alt text](/src/images/UIIMAGE/Picture1.png) 
+
+![alt text](/src/images/UIIMAGE/Picture3.png) 
+
+![alt text](/src/images/UIIMAGE/Picture4.png) 
+
+![alt text](/src/images/UIIMAGE/Picture5.png) 
+
+![alt text](/src/images/UIIMAGE/Picture6.png) 
+
+![alt text](/src/images/UIIMAGE/Picture7.png) 
+
+![alt text](/src/images/UIIMAGE/Picture8.png) 
+
+![alt text](/src/images/UIIMAGE/Picture9.png) 
+
+![alt text](/src/images/UIIMAGE/Picture10.png) 
+
+![alt text](/src/images/UIIMAGE/Picture11.png) 
+
+![alt text](/src/images/UIIMAGE/Picture12.png) 
+
+![alt text](/src/images/UIIMAGE/Picture13.png) 
+
+![alt text](/src/images/UIIMAGE/Picture14.png) 
+
+![alt text](/src/images/UIIMAGE/Picture15.png) 
+
+![alt text](/src/images/UIIMAGE/Picture16.png) 
+
+![alt text](/src/images/UIIMAGE/Picture17.png) 
+
+![alt text](/src/images/UIIMAGE/Picture18.png) 
