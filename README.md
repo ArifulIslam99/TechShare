@@ -32,3 +32,5 @@ Server-Side Code: https://github.com/ArifulIslam99/techshare-server
 ->In the admin dashboard, admin can make a new admin, editor or make anyone a user. Admin can manage all the blogs, can add a new product, can manage all products. See the users feedback.  Editor will share similar roles except update administration and manage all products. 
 
 
+## UI of the Applications
+![alt text](/src//images//uiimages//Picture1.png) 
