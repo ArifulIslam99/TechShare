@@ -33,4 +33,4 @@ Server-Side Code: https://github.com/ArifulIslam99/techshare-server
 
 
 ## UI of the Applications
-![alt text](/src//images//uiimages//Picture1.png) 
+![alt text](/src/images/UIIMAGE/Picture1.png) 
